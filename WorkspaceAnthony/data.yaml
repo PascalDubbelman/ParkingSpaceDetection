@@ -1,0 +1,5 @@
+train: /content/gdrive/MyDrive/ParkingSpaceDetection/data/images/train
+val: /content/gdrive/MyDrive/ParkingSpaceDetection/data/images/val
+
+names:
+  0: parking_space
