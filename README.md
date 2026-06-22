@@ -1,39 +1,56 @@
-# Remote Sensing and GIS Integration (GRS60312) Project (ACT\_RGIC08).
+# Remote Sensing and GIS Integration (GRS60312) Project (ACT_RGIC08)
 
 ## The Increasing Pressure on Parking Spots
 
-There are many challenges related to car parking spaces in urban areas. One of the challenges is to provide a simpler and cheaper alternative for parking inventories. This project addresses the potential of deep learning to provide a reliable and scalable method for automatically detecting individual parking spaces in Wageningen.
+Urban areas face increasing challenges related to car parking spaces. One key challenge is finding simpler and more cost‑effective alternatives for conducting parking inventories.  
+This project explores the potential of deep learning to provide a reliable and scalable method for automatically detecting individual parking spaces in Wageningen.
 
+## Objective
 
+The main objective of this study is to evaluate the feasibility of using deep learning algorithms and open‑source high‑resolution aerial imagery to automatically detect individual parking spaces in Wageningen.
 
-### Objective
+## Repository Usage
 
-The main objective of this study is to evaluate the feasibility of using deep learning algorithms and open-source high-resolution aerial imagery to automatically detect individual parking spaces in Wageningen.
+The scripts in this repository are designed to run as a pipeline.  
+Before running them, update the directory paths at the beginning of each notebook to match your local repository structure.
 
+This repository consists of three main folders:
 
+---
 
-### Repository Usage
+## 1. `Create_Tiles`
+Tools for generating image tiles suitable for YOLO models.
 
-The scrips are made to run as a pipeline. In order to run the scripts the directory paths in the beginning of the notebooks need to be changed to fit the users repository.
+- **NPCd0_SplitTiles.ipynb** — Split aerial imagery into 1024×1024 px tiles with overlap  
+- **NPCd1_RenameTiles.ipynb** — Assign standardized names to tiles  
+- **NPCd2_RandomSplitTestImages.ipynb** — Randomly split images into test tiles  
 
-This repository consist of three folders:
-* Create\_Tiles -Creating tiles from aerial imagery to fit the YOLO models.
-** NPCd0\_SplitTiles.ipynb -Split tiles into 1024x1024 pixels with overlap
-** NPCd1\_RenameTiles.ipynb -Give appropriate naming to the tiles
-** NPCd2\_RandomSplitTestImages.ipynb -Randomly split the images into test tiles
+---
 
-*ObjectDetection\_with\_OrientatedBB -Scripts to run the model (YoloV11) with orientated bounding boxes.
+## 2. `ObjectDetection_with_OrientatedBB`
+Scripts to run YOLOv11 with oriented bounding boxes.
 
-*ObjectDetection\_with\_RegularBB -Scripts to run the models (Yolov11 and YoloV9) with regular bounding boxes.
-**data.yaml -YAML file to define how layers connect
-**mainYoloV9.ipynb -Pipeline to run YOLO V9.
-**mainYoloV11.ipynb -Pipeline to run YOLO v11.
-**'Python' folder
-***georeference\_images.py -Script to create georeferenced images.
-***tif\_to\_png.py -Script to convert .tif to .png file.
-***train\_model.py -Script to train the YOLO model.
-***train\_val\_data\_split.py -Script to split training and validation data.
-***xml\_to\_txt.py -Script to convert .xml to .txt file.
+---
 
-### Contributions
+## 3. `ObjectDetection_with_RegularBB`
+Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
+
+- **data.yaml** — Defines dataset structure  
+- **mainYoloV9.ipynb** — Pipeline for YOLOv9  
+- **mainYoloV11.ipynb** — Pipeline for YOLOv11  
+
+### Python utilities (inside the `Python` folder)
+
+- **georeference_images.py** — Generate georeferenced images  
+- **tif_to_png.py** — Convert `.tif` to `.png`  
+- **train_model.py** — Train YOLO models  
+- **train_val_data_split.py** — Split training and validation datasets  
+- **xml_to_txt.py** — Convert `.xml` annotations to `.txt` format  
+
+---
+
+## Contributions
+
+(Insert contribution guidelines here.)
+
 
