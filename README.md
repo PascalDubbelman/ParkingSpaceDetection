@@ -51,6 +51,5 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 
 ## Contributions
 
-(Insert contribution guidelines here.)
 
 
