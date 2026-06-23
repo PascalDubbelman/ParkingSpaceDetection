@@ -62,7 +62,7 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 
 ## Step-by-step guide
 ### Setup
-- 
+The notebooks should be run in Google Colab. To be able to do that; upload the repository to your google drive. The step guide begins at round 1, however, begin at round 1 only if you want to completely reproduce our workflow. For best results/models start at round 2 (images with overlap=better for model).  
 
 ### Round 1
 - Follow tutorial Download data
@@ -92,7 +92,7 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 - Run model pipelines `NPCd3_YoloV9_Pipeline.ipynb`, `NPCd4_YoloV11_Pipeline.ipynb` and `NPCd5_YoloV11_OBB_Pipeline.ipynb`
 
 ## Contributions
-The authors of the script are Polly Cheung, Pascal Dubbelman, Anthony Jansen, Iris Lagemaat, and Susanna van de Wetering.
+The authors of this repository are Polly Cheung, Pascal Dubbelman, Anthony Jansen, Iris Lagemaat, and Susanna van de Wetering.
 
 *Last edited: 23/06/2026*
 
