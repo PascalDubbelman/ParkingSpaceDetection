@@ -36,8 +36,8 @@ Scripts to run YOLOv11 with oriented bounding boxes.
 Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 
 - **data.yaml** — Defines dataset structure  
-- **mainYoloV9.ipynb** — Pipeline for YOLOv9  
-- **mainYoloV11.ipynb** — Pipeline for YOLOv11  
+- **NPCd3_YoloV9_pipeline.ipynb** — Pipeline for YOLOv9  
+- **NPCd4_YoloV11_pipeline.ipynb** — Pipeline for YOLOv11  
 
 ### Python utilities (inside the `Python` folder)
 
@@ -49,7 +49,39 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 
 ---
 
-## Contributions
+## Step-by-step guide
+### Setup
+- 
+### Round 1
+- Follow tutorial Download data
+- Run `NPCd0_SplitTiles.ipynb` to split tiles
+- Follow tutorial Sorting tiles
+- Follow tutorial Annotation round 1
+- Run `NPCd1_RenameTiles.ipynb` to rename tiles
+- Run model pipelines **NPCd3_YoloV9_Pipeline.ipynb** and **NPCd4_YoloV11_Pipeline.ipynb**
 
+### Round 2
+- Follow tutorial Download data
+- Run `NPCd0_SplitTiles.ipynb` to split tiles
+- Follow tutorial Sorting tiles
+- Follow tutorial Field survey
+- Follow tutorial Annotation round 2
+- Run `NPCd1_RenameTiles.ipynb` to rename tiles
+- Run model pipelines **NPCd3_YoloV9_Pipeline.ipynb**, **NPCd4_YoloV11_Pipeline.ipynb** and **NPCd5_YoloV11_OBB_Pipeline.ipynb**
+
+### Round test tiles
+- Follow tutorial Download data
+- Run `NPCd0_SplitTiles.ipynb` to split tiles
+- Follow tutorial Sorting tiles
+- Run `NPCd2_RandomSplitTestImages.ipynb` to random select images for testing
+- Follow tutorial Field survey
+- Follow tutorial Annotation round 2
+- Run `NPCd1_RenameTiles.ipynb` to rename tiles
+- Run model pipelines **NPCd3_YoloV9_Pipeline.ipynb**, **NPCd4_YoloV11_Pipeline.ipynb** and **NPCd5_YoloV11_OBB_Pipeline.ipynb**
+
+## Contributions
+The authors of the script are Polly Cheung, Pascal Dubbelman, Anthony Jansen, Iris Lagemaat, and Susanna van de Wetering.
+
+*Last edited: 23/06/2026*
 
 
