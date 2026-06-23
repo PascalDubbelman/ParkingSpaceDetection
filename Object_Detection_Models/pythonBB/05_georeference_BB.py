@@ -40,7 +40,7 @@ def pixel_to_geo(px, py, A, B, C, D, E, F):
     lat = C * px + D * py + F
     return lon, lat
 
-def georeference_images (predict_results, tif_dir, geojson_output_path):
+def georeference_BB (predict_results, tif_dir, geojson_output_path):
     '''Converts bounding box predictions from pixel coordinates to geographic coordinates using TWF files and saves them as a GeoJSON file.
 
             Parameters: A Prediction results from the YOLO model.

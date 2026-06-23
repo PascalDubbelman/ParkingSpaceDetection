@@ -14,51 +14,63 @@ The main objective of this study is to evaluate the feasibility of using deep le
 The scripts in this repository are designed to run as a pipeline.  
 Before running them, update the directory paths at the beginning of each notebook to match your local repository structure.
 
-This repository consists of three main folders:
+This repository consists of 2 main folders:
 
 ---
 
 ## 1. `Create_Tiles`
 Tools for generating image tiles suitable for YOLO models.
 
-- **NPCd0_SplitTiles.ipynb** — Split aerial imagery into 1024×1024 px tiles with overlap  
-- **NPCd1_RenameTiles.ipynb** — Assign standardized names to tiles  
-- **NPCd2_RandomSplitTestImages.ipynb** — Randomly split images into test tiles  
+- `NPCd0_SplitTiles.ipynb` — Split aerial imagery into 1024×1024 px tiles with overlap  
+- `NPCd1_RenameTiles.ipynb` — Assign standardized names to tiles  
+- `NPCd2_RandomSplitTestImages.ipynb` — Randomly split images into test tiles  
 
 ---
 
-## 2. `ObjectDetection_with_OrientatedBB`
-Scripts to run YOLOv11 with oriented bounding boxes.
+## 2. `Combine_Geojsons`
+Combines the `.geojson` layers produced in annotation round 2.
+
+- `NPCd3_CombineGeojson.py` 
 
 ---
 
-## 3. `ObjectDetection_with_RegularBB`
+## 3. `Object_Detection_Models`
 Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 
-- **data.yaml** — Defines dataset structure  
-- **NPCd3_YoloV9_pipeline.ipynb** — Pipeline for YOLOv9  
-- **NPCd4_YoloV11_pipeline.ipynb** — Pipeline for YOLOv11  
+- `data.yaml` — Defines dataset structure  
+- `NPCd4_YoloV9_Pipeline.ipynb` — Pipeline for YOLOv9 with regular bounding boxes
+- `NPCd5_YoloV11_Pipeline.ipynb` — Pipeline for YOLOv11 with regular bounding boxes
+- `NPCd6_YoloV11_OBB_Pipeline.ipynb` - Pipeline for YOLOv11 with orientated bounding boxes
 
-### Python utilities (inside the `Python` folder)
+### Python utilities for models with regular bounding boxes (inside the `PythonBB` folder)
 
-- **georeference_images.py** — Generate georeferenced images  
-- **tif_to_png.py** — Convert `.tif` to `.png`  
-- **train_model.py** — Train YOLO models  
-- **train_val_data_split.py** — Split training and validation datasets  
-- **xml_to_txt.py** — Convert `.xml` annotations to `.txt` format  
+- `01_tif_to_png.py` — Convert `.tif` to `.png` 
+- `02_xml_to_txt.py` — Convert `.xml` annotations to `.txt` format   
+- `03_train_val_data_split.py` — Split training and validation datasets  
+- `04_train_model.py` — Train YOLO models 
+- `05_georeference_BB.py` — Generate georeferenced bounding boxes  
+
+### Python utilities for models with orientated bounding boxes (inside the `PythonOBB` folder)
+- `01_tif_to_png.py` — Convert `.tif` to `.png` 
+- `02_geojson_to_yolo_obb_no_dedup` - Used the `.geotiff` and `.geojson` to produce normalized coordinates for the yolo OBB `.txt` 
+- `03_train_val_data_split.py` — Split training and validation datasets  
+- `04_train_obb` - Train YOLO OBB model
+- `05_predict_obb` - Predicts parking spaces using trained model
+- `06_predictions_to_geojson` - Generate georeferenced orientated bounding boxes
 
 ---
 
 ## Step-by-step guide
 ### Setup
 - 
+
 ### Round 1
 - Follow tutorial Download data
 - Run `NPCd0_SplitTiles.ipynb` to split tiles
 - Follow tutorial Sorting tiles
 - Follow tutorial Annotation round 1
 - Run `NPCd1_RenameTiles.ipynb` to rename tiles
-- Run model pipelines **NPCd3_YoloV9_Pipeline.ipynb** and **NPCd4_YoloV11_Pipeline.ipynb**
+- Run model pipelines `NPCd3_YoloV9_Pipeline.ipynb` and `NPCd4_YoloV11_Pipeline.ipynb`
 
 ### Round 2
 - Follow tutorial Download data
@@ -67,7 +79,7 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 - Follow tutorial Field survey
 - Follow tutorial Annotation round 2
 - Run `NPCd1_RenameTiles.ipynb` to rename tiles
-- Run model pipelines **NPCd3_YoloV9_Pipeline.ipynb**, **NPCd4_YoloV11_Pipeline.ipynb** and **NPCd5_YoloV11_OBB_Pipeline.ipynb**
+- Run model pipelines `NPCd3_YoloV9_Pipeline.ipynb`, `NPCd4_YoloV11_Pipeline.ipynb` and `NPCd5_YoloV11_OBB_Pipeline.ipynb`
 
 ### Round test tiles
 - Follow tutorial Download data
@@ -77,7 +89,7 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 - Follow tutorial Field survey
 - Follow tutorial Annotation round 2
 - Run `NPCd1_RenameTiles.ipynb` to rename tiles
-- Run model pipelines **NPCd3_YoloV9_Pipeline.ipynb**, **NPCd4_YoloV11_Pipeline.ipynb** and **NPCd5_YoloV11_OBB_Pipeline.ipynb**
+- Run model pipelines `NPCd3_YoloV9_Pipeline.ipynb`, `NPCd4_YoloV11_Pipeline.ipynb` and `NPCd5_YoloV11_OBB_Pipeline.ipynb`
 
 ## Contributions
 The authors of the script are Polly Cheung, Pascal Dubbelman, Anthony Jansen, Iris Lagemaat, and Susanna van de Wetering.
