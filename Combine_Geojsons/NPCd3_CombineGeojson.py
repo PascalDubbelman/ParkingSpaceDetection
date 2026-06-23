@@ -1,4 +1,14 @@
 #!/usr/bin/env python3
+''' Notebook 4: Combine Geojson layers
+
+This script is used for round 2 and the testing tiles.
+This script takes all the separately created Geojson layers in the annotation round 2 tutorial and creates a single Geojson out of it.
+The script was written for a project commissioned by the Municipality of Wageningen in relation to the course Remote Sensing and GIS integration (GRS60312).
+The authors of the script are Polly Cheung, Pascal Dubbelman, Anthony Jansen, Iris Lagemaat, and Susanna van de Wetering.
+
+Last edited: 23/06/2026
+'''
+# Install packages 
 from argparse import ArgumentParser
 from pathlib import Path
 import json
