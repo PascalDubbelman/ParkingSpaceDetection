@@ -52,11 +52,11 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 
 ### Python utilities for models with orientated bounding boxes (inside the `PythonOBB` folder)
 - `01_tif_to_png.py` — Convert `.tif` to `.png` 
-- `02_geojson_to_yolo_obb_no_dedup` - Used the `.geotiff` and `.geojson` to produce normalized coordinates for the yolo OBB `.txt` 
+- `02_geojson_to_yolo_obb_no_dedup.py` - Used the `.geotiff` and `.geojson` to produce normalized coordinates for the yolo OBB `.txt` 
 - `03_train_val_data_split.py` — Split training and validation datasets  
-- `04_train_obb` - Train YOLO OBB model
-- `05_predict_obb` - Predicts parking spaces using trained model
-- `06_predictions_to_geojson` - Generate georeferenced orientated bounding boxes
+- `04_train_obb.py` - Train YOLO OBB model
+- `05_predict_obb.py` - Predicts parking spaces using trained model
+- `06_predictions_to_geojson.py` - Generate georeferenced orientated bounding boxes
 
 ---
 
