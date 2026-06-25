@@ -39,7 +39,7 @@ From the **root of the ParkingSpaceDetection repository**, run:
 ```bash
 python Combine_Geojsons/NPCd3_CombineGeojson.py \
   --input Combine_Geojsons/input_geojsons \
-  --output Combine_Geojsons/combined_annotations.geojson
+  --output Combine_Geojsons/combined_annotations.geojson```
 
 - `NPCd3_CombineGeojson.py` - Creates a combined `.geojson` file. 
 
