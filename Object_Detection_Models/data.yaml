@@ -1,5 +1,6 @@
-train: /content/gdrive/MyDrive/ParkingSpaceDetection/data/images/train
-val: /content/gdrive/MyDrive/ParkingSpaceDetection/data/images/val
+train: /content/gdrive/MyDrive/ParkingSpaceDetection/data/round1/images/train
+val: /content/gdrive/MyDrive/ParkingSpaceDetection/data/round1/images/val
+test: /content/gdrive/MyDrive/ParkingSpaceDetection/data/roundTest/images/test
 
 names:
   0: parking_space
