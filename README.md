@@ -42,7 +42,7 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 - `NPCd5_YoloV11_Pipeline.ipynb` — Pipeline for YOLOv11 with regular bounding boxes
 - `NPCd6_YoloV11_OBB_Pipeline.ipynb` - Pipeline for YOLOv11 with orientated bounding boxes
 
-### Python utilities for models with regular bounding boxes (inside the `PythonBB` folder)
+### Python utilities for models with regular bounding boxes (inside the `PythonHBB` folder)
 
 - `01_tif_to_png.py` — Convert `.tif` to `.png` 
 - `02_xml_to_txt.py` — Convert `.xml` annotations to `.txt` format   
@@ -94,6 +94,6 @@ The notebooks should be run in Google Colab. To be able to do that; upload the r
 ## Contributions
 The authors of this repository are Polly Cheung, Pascal Dubbelman, Anthony Jansen, Iris Lagemaat, and Susanna van de Wetering.
 
-*Last edited: 23/06/2026*
+*Last edited: 25/06/2026*
 
 
