@@ -40,6 +40,8 @@ From the **root of the ParkingSpaceDetection repository**, run:
 python Combine_Geojsons/NPCd3_CombineGeojson.py \
   --input Combine_Geojsons/input_geojsons \
   --output Combine_Geojsons/combined_annotations.geojson
+```
+
 
 
 - `NPCd3_CombineGeojson.py` - Creates a combined `.geojson` file. 
