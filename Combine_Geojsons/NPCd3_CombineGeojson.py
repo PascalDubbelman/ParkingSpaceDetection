@@ -17,8 +17,8 @@ import json
 # CHANGE HERE if you want to run the script without command-line arguments.
 # Put all GeoJSON annotation files in INPUT_FOLDER.
 # The merged result will be written to OUTPUT_GEOJSON.
-INPUT_FOLDER = Path("GeoreferenceTest/202606121032215360267/third_round/all_geojsons")
-OUTPUT_GEOJSON = Path("GeoreferenceTest/202606121032215360267/third_round/combined.geojson")
+INPUT_FOLDER = Path("data/round2/all_geojsons")
+OUTPUT_GEOJSON = Path("data/round2/combined.geojson")
 
 
 def get_sort_key(geojson_path):
