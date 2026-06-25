@@ -28,9 +28,20 @@ Tools for generating image tiles suitable for YOLO models.
 ---
 
 ## 2. `Combine_Geojsons`
-Combines the `.geojson` layers produced in annotation round 2.
 
-- `NPCd3_CombineGeojson.py` 
+This step is **optional**, but required if your annotation export produces **multiple `.geojson` files**.  
+Before running `NPCd5_YoloV11_OBB_Pipeline.ipynb`, you must merge all exported annotation files into a single GeoJSON.
+
+Create an input folder inside `Combine_Geojsons` and place all exported `.geojson` files there.
+
+From the **root of the ParkingSpaceDetection repository**, run:
+
+```bash
+python Combine_Geojsons/NPCd3_CombineGeojson.py \
+  --input Combine_Geojsons/input_geojsons \
+  --output Combine_Geojsons/combined_annotations.geojson
+
+- `NPCd3_CombineGeojson.py` - Creates a combined `.geojson` file. 
 
 ---
 
@@ -38,17 +49,17 @@ Combines the `.geojson` layers produced in annotation round 2.
 Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 
 - `data.yaml` — Defines dataset structure  
-- `NPCd4_YoloV9_Pipeline.ipynb` — Pipeline for YOLOv9 with regular bounding boxes
-- `NPCd5_YoloV11_Pipeline.ipynb` — Pipeline for YOLOv11 with regular bounding boxes
+- `NPCd4_YoloV9_HBB_Pipeline.ipynb` — Pipeline for YOLOv9 with horizontal bounding boxes
+- `NPCd5_YoloV11_HBB_Pipeline.ipynb` — Pipeline for YOLOv11 with horizontal bounding boxes
 - `NPCd6_YoloV11_OBB_Pipeline.ipynb` - Pipeline for YOLOv11 with orientated bounding boxes
 
-### Python utilities for models with regular bounding boxes (inside the `PythonHBB` folder)
+### Python utilities for models with horizontal bounding boxes (inside the `PythonHBB` folder)
 
-- `01_tif_to_png.py` — Convert `.tif` to `.png` 
-- `02_xml_to_txt.py` — Convert `.xml` annotations to `.txt` format   
-- `03_train_val_data_split.py` — Split training and validation datasets  
-- `04_train_model.py` — Train YOLO models 
-- `05_georeference_BB.py` — Generate georeferenced bounding boxes  
+- `tif_to_png.py` — Convert `.tif` to `.png` 
+- `xml_to_txt.py` — Convert `.xml` annotations to `.txt` format   
+- `train_val_data_split.py` — Split training and validation datasets  
+- `train_model.py` — Train YOLO models 
+- `georeference_HBB.py` — Generate georeferenced bounding boxes  
 
 ### Python utilities for models with orientated bounding boxes (inside the `PythonOBB` folder)
 - `01_tif_to_png.py` — Convert `.tif` to `.png` 
@@ -70,7 +81,7 @@ The notebooks should be run in Google Colab. To be able to do that; upload the r
 - Follow tutorial Sorting tiles
 - Follow tutorial Annotation round 1
 - Run `NPCd1_RenameTiles.ipynb` to rename tiles
-- Run model pipelines `NPCd3_YoloV9_Pipeline.ipynb` and `NPCd4_YoloV11_Pipeline.ipynb`
+- Run model pipelines `NPCd3_YoloV9_HBB_Pipeline.ipynb` and `NPCd4_YoloV11_HBB_Pipeline.ipynb`
 
 ### Round 2
 - Follow tutorial Download data
@@ -79,7 +90,7 @@ The notebooks should be run in Google Colab. To be able to do that; upload the r
 - Follow tutorial Field survey
 - Follow tutorial Annotation round 2
 - Run `NPCd1_RenameTiles.ipynb` to rename tiles
-- Run model pipelines `NPCd3_YoloV9_Pipeline.ipynb`, `NPCd4_YoloV11_Pipeline.ipynb` and `NPCd5_YoloV11_OBB_Pipeline.ipynb`
+- Run model pipelines `NPCd3_YoloV9_HBB_Pipeline.ipynb`, `NPCd4_YoloV11_HBB_Pipeline.ipynb` and `NPCd5_YoloV11_OBB_Pipeline.ipynb`
 
 ### Round test tiles
 - Follow tutorial Download data
@@ -89,7 +100,7 @@ The notebooks should be run in Google Colab. To be able to do that; upload the r
 - Follow tutorial Field survey
 - Follow tutorial Annotation round 2
 - Run `NPCd1_RenameTiles.ipynb` to rename tiles
-- Run model pipelines `NPCd3_YoloV9_Pipeline.ipynb`, `NPCd4_YoloV11_Pipeline.ipynb` and `NPCd5_YoloV11_OBB_Pipeline.ipynb`
+- Run model pipelines `NPCd3_YoloV9_HBB_Pipeline.ipynb`, `NPCd4_YoloV11_HBB_Pipeline.ipynb` and `NPCd5_YoloV11_OBB_Pipeline.ipynb`
 
 ## Contributions
 The authors of this repository are Polly Cheung, Pascal Dubbelman, Anthony Jansen, Iris Lagemaat, and Susanna van de Wetering.
