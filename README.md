@@ -72,6 +72,27 @@ Scripts to run YOLOv11 and YOLOv9 with regular bounding boxes.
 - `05_predict_obb.py` - Predicts parking spaces using trained model
 - `06_predictions_to_geojson.py` - Generate georeferenced orientated bounding boxes
 
+### Exploratory OBB post-processing
+
+The `explo` folder contains exploratory analysis for the YOLOv11s OBB Nude prediction. These files are not part of the main model-training workflow, but were used to better understand why the OBB model overestimated the Nude parking capacity.
+
+- `explo/NPCd7_YoloV11_OBB_Nude_PostprocessExperiments.ipynb` — Exploratory notebook for YOLOv11s OBB post-processing on the Nude prediction. It tests confidence-threshold filtering and centre-distance duplicate removal, clips the outputs to the Nude AOI, and exports summary tables and plots for the report.
+
+The post-processing experiment is exploratory. It should not be interpreted as a validated correction of the OBB model, because no location-level ground truth was available for the Nude prediction. The results are mainly useful for showing that the OBB overprediction was more related to confidence-threshold sensitivity and near-duplicate detections than to obviously unrealistic object sizes.
+
+### Exploratory prediction-size diagnostics
+
+- `explo/analyze_prediction_size_filter.py` — Exploratory diagnostic script for checking the size of georeferenced prediction polygons. It can be used to test whether very small, very large, or unusually shaped detections explain model overprediction.
+
+Example usage:
+
+```bash
+python explo/analyze_prediction_size_filter.py \
+  explo/image/predictions_nude_OBB.geojson \
+  --min-area 5 \
+  --max-area 30
+```
+
 ---
 
 ## Step-by-step guide
