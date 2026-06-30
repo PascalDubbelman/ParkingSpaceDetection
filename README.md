@@ -30,7 +30,7 @@ Tools for generating image tiles suitable for YOLO models.
 ## 2. `Combine_Geojsons`
 
 This step is **optional**, but required if your annotation export produces **multiple `.geojson` files**.  
-Before running `NPCd5_YoloV11_OBB_Pipeline.ipynb`, you must merge all exported annotation files into a single GeoJSON.
+Before running `NPCd5_YoloV11_OBB_Pipeline.ipynb`, you must merge all exported annotation files into a single `.geojson`.
 
 Create an input folder inside `Combine_Geojsons` and place all exported `.geojson` files there.
 
